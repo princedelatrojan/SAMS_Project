@@ -87,25 +87,3 @@ Username: admin
 
 Password: password123
 
-(Note: It is highly recommended to add a new admin and delete these default credentials in a production environment).
-
-Screenshots
-
-(Hint: Take some screenshots of your running app and put them in a folder called assets, then uncomment these lines!)
-
-<!--
--->
-
-Project Team
-
-This system was designed, documented, and developed by:
-
-Paul Karanja
-
-Anita Alice
-
-Agnes Wambui Njeri
-
-Cecilia Adol
-
-Developed as a Software Engineering Academic Project.
