@@ -5,7 +5,6 @@ import os
 # Define the database file name
 DB_NAME = "sams_data.db"
 
-
 def get_connection():
     """
     Creates and returns a connection to the SQLite database.
@@ -14,7 +13,6 @@ def get_connection():
     # access columns by name
     conn.row_factory = sqlite3.Row
     return conn
-
 
 def setup_database():
     """

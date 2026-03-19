@@ -9,6 +9,8 @@ def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
 
 
+
+
 def authenticate_user(username, password):
     """
     Checks if the provided username and password match a record in the database.

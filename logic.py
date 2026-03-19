@@ -1,7 +1,6 @@
 import database
 import sqlite3
 
-
 def add_student(roll_no, name, class_id, contact_info):
     conn = database.get_connection()
     cursor = conn.cursor()
@@ -16,7 +15,6 @@ def add_student(roll_no, name, class_id, contact_info):
         return False, f"Error: Roll Number '{roll_no}' already exists!"
     finally:
         conn.close()
-
 
 def update_student(student_id, roll_no, name, class_id, contact_info):
     """Updates an existing student's information."""
@@ -59,14 +57,6 @@ def get_all_students():
     return [dict(row) for row in rows]
 
 
-def get_student_by_id(student_id):
-    """Fetches a single student's details for editing."""
-    conn = database.get_connection()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM students WHERE student_id = ?", (student_id,))
-    row = cursor.fetchone()
-    conn.close()
-    return dict(row) if row else None
 
 
 def get_students_by_class(class_id):
@@ -76,7 +66,6 @@ def get_students_by_class(class_id):
     rows = cursor.fetchall()
     conn.close()
     return [dict(row) for row in rows]
-
 
 def submit_attendance(attendance_list, date):
     conn = database.get_connection()
@@ -103,8 +92,6 @@ def submit_attendance(attendance_list, date):
         return False, f"Failed to save attendance: {str(e)}"
     finally:
         conn.close()
-
-
 def get_attendance_report(class_id, date):
     """Fetches past attendance records to view or export."""
     conn = database.get_connection()
@@ -120,3 +107,20 @@ def get_attendance_report(class_id, date):
     rows = cursor.fetchall()
     conn.close()
     return [dict(row) for row in rows]
+
+def get_student_by_id(student_id):
+    """Fetches a single student's details for editing."""
+    conn = database.get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM students WHERE student_id = ?", (student_id,))
+    row = cursor.fetchone()
+    conn.close()
+    return dict(row) if row else None
+
+
+
+
+
+
+
+
